@@ -1,25 +1,12 @@
-import random
-head = random.randint(1,5)
-if head == '1':
-    print("""
-    
-     _       _________ _        _        _______          _________ _______           _______  _______ 
-( \      \__   __/( (    /|| \    /\(  ____ )|\     /|\__   __/(  ____ \|\     /|(  ____ \(  ____ )
-| (         ) (   |  \  ( ||  \  / /| (    )|| )   ( |   ) (   | (    \/| )   ( || (    \/| (    )|
-| |         | |   |   \ | ||  (_/ / | (____)|| (___) |   | |   | (_____ | (___) || (__    | (____)|
-| |         | |   | (\ \) ||   _ (  |  _____)|  ___  |   | |   (_____  )|  ___  ||  __)   |     __)
-| |         | |   | | \   ||  ( \ \ | (      | (   ) |   | |         ) || (   ) || (      | (\ (   
-| (____/\___) (___| )  \  ||  /  \ \| )      | )   ( |___) (___/\____) || )   ( || (____/\| ) \ \__
-(_______/\_______/|/    )_)|_/    \/|/       |/     \|\_______/\_______)|/     \|(_______/|/   \__/
-                                                                                                   
-    
-    
-    """)
-elif head == '2':
-    print("""
+from colorama import Fore, Back, Style, init
+init(autoreset=True)
+import webbrowser
+import time
+while True:
+    print(Fore.GREEN + """
     
 M""MMMMMMMM oo          dP       MM"""""""`YM dP       oo          dP                         
-M  MMMMMMMM             88       MM  mmmmm  M 88                   88                         
+M  MMMMMMMM o8          88       MM  mmmmm  M 88       o8          88                         
 M  MMMMMMMM dP 88d888b. 88  .dP  M'        .M 88d888b. dP .d8888b. 88d888b. .d8888b. 88d888b. 
 M  MMMMMMMM 88 88'  `88 88888"   MM  MMMMMMMM 88'  `88 88 Y8ooooo. 88'  `88 88ooood8 88'  `88 
 M  MMMMMMMM 88 88    88 88  `8b. MM  MMMMMMMM 88    88 88       88 88    88 88.  ... 88       
@@ -28,46 +15,23 @@ MMMMMMMMMMM                      MMMMMMMMMMMM
                                                                                               
 
     
-    """)
-elif head == '3':
-    print("""
+""")
+    print(Style.RESET_ALL)
+    fake = str(input(Fore.BLUE + "Yanıltıcı (Sahte) Linki Girin : "))
+    print(Style.RESET_ALL)
+    print(Back.GREEN + "Sahte Link :" + fake + "")
+    print(Style.RESET_ALL)
+    real = str(input(Fore.BLUE + "Real (Yönlendirilecek Linki Girin : "))
+    print(Style.RESET_ALL)
+    print(Back.GREEN + "Yönlendirilecek Link :" + real + "")
+    print(Style.RESET_ALL)
+    print(Fore.GREEN + "-------------------------------------------------")
+    print(Style.RESET_ALL)
+    time.sleep(2)
+    print(Fore.RED + ""+fake+"@"+real+"")
+    soru = str(input("Linki Şimdi Açmak İstiyor Musun ? Y&n: "))
+    if soru == 'Y':
+        webbrowser.open(""+fake+"@"+real+"")
+    elif soru == 'n':
+        print("Vazgeçildi.")
     
-     _       _________ _        _        _______          _________ _______           _______  _______ 
-( \      \__   __/( (    /|| \    /\(  ____ )|\     /|\__   __/(  ____ \|\     /|(  ____ \(  ____ )
-| (         ) (   |  \  ( ||  \  / /| (    )|| )   ( |   ) (   | (    \/| )   ( || (    \/| (    )|
-| |         | |   |   \ | ||  (_/ / | (____)|| (___) |   | |   | (_____ | (___) || (__    | (____)|
-| |         | |   | (\ \) ||   _ (  |  _____)|  ___  |   | |   (_____  )|  ___  ||  __)   |     __)
-| |         | |   | | \   ||  ( \ \ | (      | (   ) |   | |         ) || (   ) || (      | (\ (   
-| (____/\___) (___| )  \  ||  /  \ \| )      | )   ( |___) (___/\____) || )   ( || (____/\| ) \ \__
-(_______/\_______/|/    )_)|_/    \/|/       |/     \|\_______/\_______)|/     \|(_______/|/   \__/
-    
-    """)
-elif head == '4':
-    print("""
-    
-    
-_    _ _  _ _  _ ___  _  _ _ ____ _  _ ____ ____ 
-|    | |\ | |_/  |__] |__| | [__  |__| |___ |__/ 
-|___ | | \| | \_ |    |  | | ___] |  | |___ |  \ 
-                                                 
-    
-    """)
-elif head == '5':
-    print("""
-
-888     d8b        888     8888888b. 888     d8b        888                     
-888     Y8P        888     888   Y88b888     Y8P        888                     
-888                888     888    888888                888                     
-888     88888888b. 888  888888   d88P88888b. 888.d8888b 88888b.  .d88b. 888d888 
-888     888888 "88b888 .88P8888888P" 888 "88b88888K     888 "88bd8P  Y8b888P"   
-888     888888  888888888K 888       888  888888"Y8888b.888  88888888888888     
-888     888888  888888 "88b888       888  888888     X88888  888Y8b.    888     
-88888888888888  888888  888888       888  888888 88888P'888  888 "Y8888 888     
-
-    """)
-fake = str(input("Yanıltıcı (Sahte) Linki Girin : "))
-print("Sahte Link :" + fake + "")
-real = str(input("Real (Yönlendirilecek Linki Girin : "))
-print("Yönlendirilecek Link :" + real + "")
-print("-------------------------------------------------")
-print(""+fake+"@"+real+"")
